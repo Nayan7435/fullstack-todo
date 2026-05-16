@@ -40,7 +40,7 @@ app.post("/todos", async (req, res) => {
 });
 
 // DELETE - Remove todo
-app.delete("/todos", async (req, res) => {
+app.delete("/todos/:id", async (req, res) => {
   await Todo.findByIdAndDelete(req.params.id);
   res.json({ message: "Deleted!" });
 });
